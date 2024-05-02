@@ -26,9 +26,9 @@ public class Service {
     }
 
     public String addAnimalSkill(int iD, String skill) {
-        if(nursery.addSkilltoAnimal(iD, skill)){
-            return skill+" add successful!";
+        if (nursery.addSkilltoAnimal(iD, skill)) {
+            return skill + " add successful!";
         }
-        return "Something wrong!";
+        return "Skill not add";
     }
 }

@@ -51,8 +51,12 @@ public class Nursery {
 
     public boolean addSkilltoAnimal(int iD, String skill) {
         Animals animal = getAnimalByID(iD);
-        if (animal.addSkill(skill))
-            return true;
-        else return false;
+        if (animal == null) {
+            System.out.println("Animal with ID " + iD + " not found.");
+            return false;
+        } else {
+            return animal.addSkill(skill);
+        }
+
     }
 }
