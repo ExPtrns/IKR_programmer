@@ -98,11 +98,18 @@ public class ConsoleUI implements View {
             System.out.println("Год: ");
             int year = Integer.parseInt(scanner.nextLine());
             birthDate = LocalDate.of(year, month, day);
-            presenter.addAnimal(animalType, name, birthDate);
+            System.out.println("Проверьте данные:");
+            System.out.println(animalType+ " - " + name + " дата рождения - " + birthDate);
+            System.out.println("Если все верно, введите - 1");
+            String answer = scanner.nextLine();
+            if (answer.equals("1"))
+                presenter.addAnimal(animalType, name, birthDate);
+            else
+                throw new Exception();
         } catch (NumberFormatException e) {
             System.out.println("Ошибка! Дата должна быть числом.");
         } catch (Exception e) {
-            System.out.println("Ошибка! В списке нет таого типа животного.");
+            System.out.println("Ошибка! Проверьте данные и повторите ввод.");
         }
     }
 
